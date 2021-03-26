@@ -73,7 +73,7 @@ public class OptimizedLockingServiceTest {
 
 	private void assertThatWriteLockIsAcquiredShortlyAfter() {
 		if (!lockingServiceWrapper.writeLockAcquired()) {
-			sleep();
+			sleepASecond();
 		}
 
 		assertEquals("Write lock should be acquired after read locks are released", true,
@@ -82,14 +82,14 @@ public class OptimizedLockingServiceTest {
 
 	private void assertThatReadLockIsAcquiredShortlyAfter() {
 		if (!lockingServiceWrapper.readLockAcquired()) {
-			sleep();
+			sleepASecond();
 		}
 
 		assertEquals("Read lock should be acquired after write locks are released", true,
 				lockingServiceWrapper.readLockAcquired());
 	}
 
-	private void sleep() {
+	private void sleepASecond() {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
