@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 import org.roko.nbt.locking.api.LockingService;
-import org.roko.nbt.locking.impl.OptimizedLockingService;
 import org.roko.nbt.locking.impl.util.LockingServiceWrapper;
 
 public class OptimizedLockingServiceTest {
