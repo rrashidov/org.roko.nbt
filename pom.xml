@@ -16,6 +16,7 @@
 
 	<modules>
 		<module>org.roko.nbt.locking</module>
+		<module>org.roko.nbt.domain.api</module>
 	</modules>
 
 </project>
