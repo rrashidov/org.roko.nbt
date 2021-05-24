@@ -13,19 +13,21 @@ public class OptimizedLockingService implements LockingService {
 
 	@Override
 	public void lockForRead(String id) {
-		LockInfo lockCounter = getLockInfo(id);
+		LockInfo lockInfo = getLockInfo(id);
+		
 		boolean processed = false;
+		
 		while (!processed) {
-			synchronized (lockCounter) {
-				if (lockCounter.locked()) {
+			synchronized (lockInfo) {
+				if (lockInfo.locked()) {
 					try {
-						lockCounter.wait();
+						lockInfo.wait();
 					} catch (InterruptedException e) {
 						Thread.currentThread().interrupt();
 					}
 				} else {
-					lockCounter.inc();
-					lockCounter.notifyAll();
+					lockInfo.inc();
+					lockInfo.notifyAll();
 					processed = true;
 				}
 			}
