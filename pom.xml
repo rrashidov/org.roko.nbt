@@ -17,6 +17,7 @@
 
 	<modules>
 		<module>org.roko.nbt.locking</module>
+		<module>org.roko.nbt.hash</module>
 		<module>org.roko.nbt.domain.api</module>
 		<module>org.roko.nbt.persistence.api</module>
 		<module>org.roko.nbt.persistence.distrib</module>
