@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.roko.nbt</groupId>
-	<artifactId>org.roko.nbt.persistebce.api</artifactId>
+	<artifactId>org.roko.nbt.persistence.api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>org.roko.nbt.persistence.api</name>
