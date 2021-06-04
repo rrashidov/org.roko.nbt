@@ -16,7 +16,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>org.roko.nbt.lock</module>
+		<module>lock</module>
 		<module>org.roko.nbt.hash</module>
 		<module>org.roko.nbt.domain.api</module>
 		<module>org.roko.nbt.persistence.api</module>
