@@ -36,10 +36,10 @@ public class OptimizedLockingService implements LockService {
 
 	@Override
 	public void unlockForRead(String id) {
-		LockInfo lockCounter = getLockInfo(id);
-		synchronized (lockCounter) {
-			lockCounter.dec();
-			lockCounter.notifyAll();
+		LockInfo lockInfo = getLockInfo(id);
+		synchronized (lockInfo) {
+			lockInfo.dec();
+			lockInfo.notifyAll();
 		}
 	}
 
