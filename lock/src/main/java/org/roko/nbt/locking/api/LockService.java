@@ -10,7 +10,7 @@ package org.roko.nbt.locking.api;
  * </ul>
  *
  */
-public interface LockingService {
+public interface LockService {
 
 	/**
 	 * Acquires read lock for the given id

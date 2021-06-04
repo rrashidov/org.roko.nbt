@@ -4,14 +4,14 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.roko.nbt.locking.api.LockingService;
+import org.roko.nbt.locking.api.LockService;
 import org.roko.nbt.locking.impl.util.LockingServiceWrapper;
 
 public class OptimizedLockingServiceTest {
 
 	private static final String TEST_ID = "test_id";
 
-	private LockingService lockingService;
+	private LockService lockingService;
 	private LockingServiceWrapper lockingServiceWrapper;
 	private LockingServiceWrapper anotherLockingServiceWrapper;
 

@@ -1,18 +1,18 @@
 package org.roko.nbt.locking.impl.util;
 
-import org.roko.nbt.locking.api.LockingService;
+import org.roko.nbt.locking.api.LockService;
 
 public class LockingServiceWrapper {
 
 	private final ThreadMonitor readThreadMonitor = new ThreadMonitor();
 	private final ThreadMonitor writeThreadMonitor = new ThreadMonitor();
 	
-	private LockingService lockingService;
+	private LockService lockingService;
 	
 	private ReadLockerThread readLockerThread;
 	private WriteLockerThread writeLockerThread;
 	
-	public LockingServiceWrapper(LockingService lockingService) {
+	public LockingServiceWrapper(LockService lockingService) {
 		this.lockingService = lockingService;
 	}
 	

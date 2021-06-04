@@ -1,16 +1,16 @@
 package org.roko.nbt.locking.impl.util;
 
-import org.roko.nbt.locking.api.LockingService;
+import org.roko.nbt.locking.api.LockService;
 
 public class ReadLockerThread extends Thread{
 
 	private ThreadMonitor monitor;
 	private String id;
-	private LockingService lockingService;
+	private LockService lockingService;
 	
 	private boolean lockAcquired = false;
 	
-	public ReadLockerThread(ThreadMonitor monitor, String id, LockingService lockingService) {
+	public ReadLockerThread(ThreadMonitor monitor, String id, LockService lockingService) {
 		this.monitor = monitor;
 		this.id = id;
 		this.lockingService = lockingService;

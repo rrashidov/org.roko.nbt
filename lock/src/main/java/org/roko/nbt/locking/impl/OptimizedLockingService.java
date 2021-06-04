@@ -3,9 +3,9 @@ package org.roko.nbt.locking.impl;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.roko.nbt.locking.api.LockingService;
+import org.roko.nbt.locking.api.LockService;
 
-public class OptimizedLockingService implements LockingService {
+public class OptimizedLockingService implements LockService {
 
 	private final Object MONITOR = new Object();
 
