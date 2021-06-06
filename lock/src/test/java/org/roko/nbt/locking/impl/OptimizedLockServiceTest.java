@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.roko.nbt.locking.api.LockService;
 import org.roko.nbt.locking.impl.util.LockingServiceWrapper;
 
-public class OptimizedLockingServiceTest {
+public class OptimizedLockServiceTest {
 
 	private static final String TEST_ID = "test_id";
 
