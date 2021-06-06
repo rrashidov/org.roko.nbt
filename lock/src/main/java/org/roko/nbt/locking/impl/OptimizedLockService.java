@@ -45,25 +45,25 @@ public class OptimizedLockService implements LockService {
 
 	@Override
 	public void lockForWrite(String id) {
-		LockInfo lockCounter = getLockInfo(id);
+		LockInfo lockInfo = getLockInfo(id);
 		boolean processed = false;
 		while (!processed) {
-			synchronized (lockCounter) {
-				if (lockCounter.readLocks() > 0) {
+			synchronized (lockInfo) {
+				if (lockInfo.readLocks() > 0) {
 					try {
-						lockCounter.wait();
+						lockInfo.wait();
 					} catch (InterruptedException e) {
 						Thread.currentThread().interrupt();
 					}
-				} else if (lockCounter.locked()) {
+				} else if (lockInfo.locked()) {
 					try {
-						lockCounter.wait();
+						lockInfo.wait();
 					} catch (InterruptedException e) {
 						Thread.currentThread().interrupt();
 					}
 				} else {
-					lockCounter.lock();
-					lockCounter.notifyAll();
+					lockInfo.lock();
+					lockInfo.notifyAll();
 					processed = true;
 				}
 			}
