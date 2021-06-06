@@ -17,7 +17,7 @@ public class OptimizedLockingServiceTest {
 
 	@Before
 	public void setup() {
-		lockingService = new OptimizedLockingService();
+		lockingService = new OptimizedLockService();
 
 		lockingServiceWrapper = new LockingServiceWrapper(lockingService);
 		anotherLockingServiceWrapper = new LockingServiceWrapper(lockingService);

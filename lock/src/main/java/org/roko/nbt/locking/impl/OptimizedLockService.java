@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.roko.nbt.locking.api.LockService;
 
-public class OptimizedLockingService implements LockService {
+public class OptimizedLockService implements LockService {
 
 	private final Object MONITOR = new Object();
 
