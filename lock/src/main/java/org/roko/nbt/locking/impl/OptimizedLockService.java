@@ -80,15 +80,18 @@ public class OptimizedLockService implements LockService {
 	}
 
 	private LockInfo getLockInfo(String id) {
-		LockInfo o = locksMap.get(id);
+		LockInfo lockInfo = locksMap.get(id);
 
-		if (o == null) {
+		if (lockInfo == null) {
 			synchronized (MONITOR) {
-				o = new LockInfo();
-				locksMap.put(id, o);
+				lockInfo = locksMap.get(id);
+				if (lockInfo == null) {
+					lockInfo = new LockInfo();
+					locksMap.put(id, lockInfo);
+				}
 			}
 		}
 
-		return o;
+		return lockInfo;
 	}
 }
