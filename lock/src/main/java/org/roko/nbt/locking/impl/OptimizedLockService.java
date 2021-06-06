@@ -72,10 +72,10 @@ public class OptimizedLockService implements LockService {
 
 	@Override
 	public void unlockForWrite(String id) {
-		LockInfo lockCounter = getLockInfo(id);
-		synchronized (lockCounter) {
-			lockCounter.unlock();
-			lockCounter.notifyAll();
+		LockInfo lockInfo = getLockInfo(id);
+		synchronized (lockInfo) {
+			lockInfo.unlock();
+			lockInfo.notifyAll();
 		}
 	}
 
