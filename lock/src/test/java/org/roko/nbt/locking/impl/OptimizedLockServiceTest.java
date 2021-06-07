@@ -5,22 +5,22 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 import org.roko.nbt.locking.api.LockService;
-import org.roko.nbt.locking.impl.util.LockingServiceWrapper;
+import org.roko.nbt.locking.impl.util.LockServiceAsyncClient;
 
 public class OptimizedLockServiceTest {
 
 	private static final String TEST_ID = "test_id";
 
 	private LockService lockingService;
-	private LockingServiceWrapper lockingServiceWrapper;
-	private LockingServiceWrapper anotherLockingServiceWrapper;
+	private LockServiceAsyncClient lockingServiceWrapper;
+	private LockServiceAsyncClient anotherLockingServiceWrapper;
 
 	@Before
 	public void setup() {
 		lockingService = new OptimizedLockService();
 
-		lockingServiceWrapper = new LockingServiceWrapper(lockingService);
-		anotherLockingServiceWrapper = new LockingServiceWrapper(lockingService);
+		lockingServiceWrapper = new LockServiceAsyncClient(lockingService);
+		anotherLockingServiceWrapper = new LockServiceAsyncClient(lockingService);
 	}
 
 	@Test
